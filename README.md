@@ -229,10 +229,3 @@ testAPI();
 * Star & Fork the repo → [image-library-api](https://github.com/parthamk/image-library-api)
 
 ---
-
-```
-
-👉 This is a **valid `README.md`** file — drop it in your repo root.  
-
-Do you also want me to add **badges** (like GitHub stars, forks, and follow buttons) at the top?
-```
