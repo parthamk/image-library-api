@@ -1,11 +1,11 @@
 const { Router } = require("express");
 const { getDirectories, getImages } = require("../controllers/imageController");
-const { authenticateApiKey } = require("../middleware/authMiddleware");
+const { authenticate } = require("../middleware/authMiddleware");
 
-const router = Router();
+const router = express.Router();
 
 // Apply API key authentication
-router.use(authenticateApiKey);
+router.use(authenticate);
 
 // Routes
 router.get("/directories", getDirectories);
