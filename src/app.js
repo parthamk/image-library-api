@@ -16,10 +16,9 @@ app.get("/", (req, res) => {
 });
 
 // Apply API key middleware first
-// app.use(authenticate);
+app.use(authenticate);
 
 // Then mount routes
-// app.use("/api", routes);
-app.use("/api", authenticate, routes);
+app.use("/api", routes);
 
 module.exports = app;
