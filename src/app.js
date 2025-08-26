@@ -1,9 +1,15 @@
 const express = require("express");
 const cors = require("cors");
-const imageRoutes = require("./routes/imageRoutes");
+const routes = require("./routes/imageRoutes");
+const authenticate = require("./middleware/authMiddleware");
 
 const app = express();
-app.use(cors());
-app.use("/api", imageRoutes);
 
-module.exports = app; // export for Vercel
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Protect all API routes with API key
+app.use("/api", authenticate, routes);
+
+module.exports = app;
