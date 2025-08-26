@@ -3,7 +3,7 @@ const {
   collectImages,
 } = require("../services/githubService");
 
-async function getDirectories(req, res) {
+exports.getDirectories = async (req, res) => {
   try {
     const contents = await getDirectoryContents();
     const directories = [];
@@ -23,9 +23,9 @@ async function getDirectories(req, res) {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-}
+};
 
-async function getImages(req, res) {
+exports.getImagesByFolder = async (req, res) => {
   try {
     const { folder } = req.params;
     const images = await collectImages(folder);
@@ -33,6 +33,4 @@ async function getImages(req, res) {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-}
-
-module.exports = { getDirectories, getImages };
+};

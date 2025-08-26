@@ -1,15 +1,13 @@
-const { BASE_URL } = require("../config/github");
+const OWNER = process.env.OWNER;
+const REPO = process.env.REPO;
+const BASE_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents`;
 
-// Fetch contents from GitHub repo
 async function getDirectoryContents(path = "") {
   const res = await fetch(`${BASE_URL}/${path}`);
-  if (!res.ok) {
-    throw new Error(`GitHub API error: ${res.status}`);
-  }
+  if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
   return res.json();
 }
 
-// Recursively collect images
 async function collectImages(path) {
   const contents = await getDirectoryContents(path);
   const images = [];
@@ -26,7 +24,6 @@ async function collectImages(path) {
       images.push(...subImages);
     }
   }
-
   return images;
 }
 
