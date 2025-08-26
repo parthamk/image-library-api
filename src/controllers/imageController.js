@@ -1,10 +1,11 @@
-import {
+// controllers/imageController.js
+const {
   collectImages,
   getDirectoryContents,
-} from "../services/githubService.js";
+} = require("../services/githubService");
 
 // Get all directories with image counts
-export const getDirectories = async (req, res) => {
+const getDirectories = async (req, res) => {
   try {
     const contents = await getDirectoryContents();
     const directories = [];
@@ -27,7 +28,7 @@ export const getDirectories = async (req, res) => {
 };
 
 // Get images from a specific folder
-export const getImages = async (req, res) => {
+const getImages = async (req, res) => {
   try {
     const { folder } = req.params;
     const images = await collectImages(folder);
@@ -36,3 +37,5 @@ export const getImages = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+module.exports = { getDirectories, getImages };
