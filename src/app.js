@@ -9,7 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Protect all API routes with API key
-app.use("/api", authenticate, routes);
+// Apply API key middleware first
+app.use(authenticate);
+
+// Then mount routes
+app.use("/api", routes);
 
 module.exports = app;
