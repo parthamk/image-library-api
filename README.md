@@ -1,7 +1,3 @@
-Got it 👍 — you want a **clean `README.md` file** (not the HTML mess you pasted).
-Here’s the properly formatted Markdown file you can drop directly into your repo:
-
-```markdown
 # 🖼️ Image Library API
 
 A simple **Node.js + Express API** hosted on Vercel/Render that serves image library data directly from a GitHub repository.  
