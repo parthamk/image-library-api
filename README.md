@@ -1,7 +1,6 @@
-# 🖼️ Image Library API
+# 🖼️ Image Library API - Full Stack Monorepo
 
-A simple **Node.js + Express API** hosted on Vercel/Render that serves image library data directly from a GitHub repository.  
-This API lets you browse images organized into categories and subfolders, with **counts of subfolders and images**.
+A complete image library solution with a **Node.js/Express API backend** and an **interactive React documentation website**.
 
 ---
 

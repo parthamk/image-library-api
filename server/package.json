@@ -1,0 +1,27 @@
+{
+  "name": "imageapi-server",
+  "version": "1.0.0",
+  "description": "Image Library API - Backend Server",
+  "main": "api/index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parthamk/image-library-api.git"
+  },
+  "keywords": ["api", "images", "github"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/parthamk/image-library-api/issues"
+  },
+  "homepage": "https://github.com/parthamk/image-library-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
